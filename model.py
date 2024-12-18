@@ -6,7 +6,7 @@ from sqlalchemy import UniqueConstraint
 db = SQLAlchemy()
 
 
-class ClientParking(db.Model):
+class ClientParking(db.Model):  # type: ignore
     __tablename__ = "client_parking"
     id = db.Column(db.Integer, nullable=True, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("clients.id"), nullable=False)
@@ -25,7 +25,7 @@ class ClientParking(db.Model):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class Parking(db.Model):
+class Parking(db.Model):    # type: ignore
     __tablename__ = "parking"
     id = db.Column(db.Integer, nullable=False, primary_key=True)
     address = db.Column(db.String, nullable=False)
@@ -43,7 +43,7 @@ class Parking(db.Model):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class Client(db.Model):
+class Client(db.Model):    # type: ignore
     __tablename__ = "clients"
 
     id = db.Column(db.Integer, nullable=False, primary_key=True)

@@ -2,7 +2,6 @@ import sys
 
 import pytest
 
-from main import db
 from model import Client, ClientParking, Parking
 
 from .conftest import client
@@ -59,7 +58,7 @@ def test_client_parking_in(client, db):
     parking = db.session.query(Parking).where(Parking.id == 1).one()
     opened = parking.opened
     assert parking.count_places == parking.count_available_places + 1
-    assert opened == True
+    assert opened
     assert response.status_code == 201
 
 
@@ -85,7 +84,7 @@ def test_client_parking_out(client, db):
     assert response.status_code == 204
 
 
-def test_create_parking_factory(client, db):
+def test_create_parking_factory(db):
     places_before = db.session.query(Parking).count()
     parking = ParkingFactory()
     db.session.commit()
@@ -94,7 +93,7 @@ def test_create_parking_factory(client, db):
     assert parking.id is not None
 
 
-def test_create_client_factory(client, db):
+def test_create_client_factory(db, client):
     clients_before = db.session.query(Client).count()
     client = ClientFactory()
     db.session.commit()

@@ -59,8 +59,6 @@ def create_app(test_config="config.py"):
         elif request.method == "POST":
             address = request.form.get("address")
             opened = request.form.get("opened", type=bool)
-            # if opened in ('True', 'true'): opened = True
-            # else: opened = False
 
             count_places = request.form.get("count_places")
             count_available_places = request.form.get("count_available_places")
