@@ -39,3 +39,7 @@ jobs:
         run: |
           pip install black
           black --diff --check .
+      - name: ISort
+        run: |
+          pip install isort
+          isort --check --diff .
