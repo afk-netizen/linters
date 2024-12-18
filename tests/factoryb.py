@@ -26,7 +26,11 @@ class ParkingFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = Parking
         sqlalchemy_session = db.session
 
-    address: factory.LazyAttribute = factory.LazyAttribute(lambda x: Faker().street_address())
+    address: factory.LazyAttribute = factory.LazyAttribute(
+        lambda x: Faker().street_address()
+    )
     opened: fuzzy.FuzzyChoice = fuzzy.FuzzyChoice(choices=(True, False))
     count_places: factory.Faker = factory.Faker("pyint", min_value=0, max_value=5)
-    count_available_places: factory.LazyAttribute = factory.LazyAttribute(lambda x: x.count_places)
+    count_available_places: factory.LazyAttribute = factory.LazyAttribute(
+        lambda x: x.count_places
+    )

@@ -25,7 +25,7 @@ class ClientParking(db.Model):  # type: ignore
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class Parking(db.Model):    # type: ignore
+class Parking(db.Model):  # type: ignore
     __tablename__ = "parking"
     id = db.Column(db.Integer, nullable=False, primary_key=True)
     address = db.Column(db.String, nullable=False)
@@ -43,7 +43,7 @@ class Parking(db.Model):    # type: ignore
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class Client(db.Model):    # type: ignore
+class Client(db.Model):  # type: ignore
     __tablename__ = "clients"
 
     id = db.Column(db.Integer, nullable=False, primary_key=True)
