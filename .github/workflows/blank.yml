@@ -5,8 +5,6 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -43,3 +41,11 @@ jobs:
         run: |
           pip install isort
           isort --check --diff .
+      - name: Flake8
+        run: | 
+          pip install flake8
+          flake8 --exclude=.venv --max-line-length 99  --per-file-ignores="tests_main.py:F811 F401" .
+      - name: MyPy
+        run: |
+          pip install mypy
+          mypy .
