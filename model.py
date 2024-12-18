@@ -2,7 +2,6 @@ from typing import Dict, Any
 
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
-from sqlalchemy.orm import foreign
 
 db = SQLAlchemy()
 

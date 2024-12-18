@@ -1,10 +1,4 @@
 import datetime
-import json
-from xmlrpc.client import boolean
-from zoneinfo import available_timezones
-
-from sqlalchemy import select, ClauseList
-
 from model import db, Client, Parking, ClientParking
 from flask import Flask, jsonify, request
 
