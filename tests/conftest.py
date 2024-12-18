@@ -1,11 +1,12 @@
+import datetime
+import sys
 from datetime import datetime
 
 import pytest
 
-from main import create_app, db as _db
-from model import Client, Parking, ClientParking
-import datetime
-import sys
+from main import create_app
+from main import db as _db
+from model import Client, ClientParking, Parking
 
 sys.path.append("../hw")
 

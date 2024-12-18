@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Any, Dict
 
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint

@@ -1,12 +1,11 @@
-import pytest
-
-from .conftest import client
-from main import db
-from model import Parking
 import sys
 
-from model import ClientParking, Client
+import pytest
 
+from main import db
+from model import Client, ClientParking, Parking
+
+from .conftest import client
 from .factoryb import ClientFactory, ParkingFactory
 
 sys.path.append("../hw")

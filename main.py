@@ -1,6 +1,8 @@
 import datetime
-from model import db, Client, Parking, ClientParking
+
 from flask import Flask, jsonify, request
+
+from model import Client, ClientParking, Parking, db
 
 
 def create_app(test_config="config.py"):

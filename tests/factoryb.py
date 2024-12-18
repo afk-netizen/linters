@@ -1,11 +1,12 @@
+import sys
+
 import factory
 import factory.fuzzy as fuzzy
-import sys
 from faker import Faker
 
 sys.path.append("../hw")
-from model import Client, Parking
 from main import db
+from model import Client, Parking
 
 
 class ClientFactory(factory.alchemy.SQLAlchemyModelFactory):
